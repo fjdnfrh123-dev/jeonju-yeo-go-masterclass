@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Original Notion export archives (already extracted into assets/)
+*.zip
+
+# Unrelated personal project (kept locally in archive/)
+archive/
