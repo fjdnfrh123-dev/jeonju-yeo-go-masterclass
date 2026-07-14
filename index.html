@@ -32,21 +32,33 @@
       content: "";
       position: fixed; inset: 0; z-index: -2;
       background:
-        linear-gradient(155deg, #2a4a42 0%, #1e3d5c 42%, #3d5248 78%, #243b55 100%);
+        linear-gradient(155deg, rgba(26, 46, 68, 0.88) 0%, rgba(30, 61, 92, 0.82) 45%, rgba(42, 74, 66, 0.86) 100%),
+        url("assets/images/school-campus.jpg") center/cover no-repeat fixed;
     }
     body::after {
       content: "";
-      position: fixed; inset: 0; z-index: -1; opacity: .22;
+      position: fixed; inset: 0; z-index: -1; opacity: .18;
       background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(255,255,255,.06) 32px),
-        repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(255,255,255,.04) 32px);
+        repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(255,255,255,.05) 32px),
+        repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(255,255,255,.03) 32px);
     }
     .wrap { max-width: 920px; margin: 0 auto; padding: 48px 20px 72px; }
     .hero {
-      text-align: center; margin-bottom: 40px; padding: 36px 24px;
+      text-align: center; margin-bottom: 40px; overflow: hidden;
       background: var(--surface); border: 2px solid rgba(30, 58, 95, .22); border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .22);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .28);
     }
+    .hero-photo { position: relative; height: 200px; overflow: hidden; }
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .hero-photo::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(236, 228, 210, 0.95) 100%);
+    }
+    .hero-body { padding: 8px 24px 32px; margin-top: -28px; position: relative; z-index: 1; }
     .eyebrow {
       display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em;
       color: var(--blue); margin-bottom: 12px;
@@ -65,8 +77,8 @@
     .badge.tech { color: #065f46; border-color: rgba(4,120,87,.28); background: rgba(209,250,229,.85); }
     section { margin-bottom: 36px; }
     h2 {
-      font-size: 1rem; font-weight: 700; margin-bottom: 14px; color: var(--navy);
-      padding-bottom: 8px; border-bottom: 2px solid rgba(37, 99, 235, .15);
+      font-size: 1rem; font-weight: 700; margin-bottom: 14px; color: #ece4d2;
+      padding-bottom: 8px; border-bottom: 2px solid rgba(236, 228, 210, .25);
     }
     .grid { display: grid; gap: 12px; }
     .card {
@@ -103,24 +115,32 @@
     .assets a:hover { background: #dbeafe; }
     footer { text-align: center; margin-top: 40px; font-size: 13px; color: rgba(236, 228, 210, .75); }
     footer a { color: #93c5fd; }
-    @media (max-width: 720px) { .card { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) {
+      .card { grid-template-columns: 1fr; }
+      .hero-photo { height: 160px; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="eyebrow">Jeonju Girls' High School</div>
-      <h1>전주여자고등학교 마스터 클래스</h1>
-      <p class="subtitle">Computer Vision · Deep Learning · Robotics<br>9개 실습으로 익히는 AI·로봇 실전 커리큘럼</p>
-      <div class="badges">
-        <span class="badge ai">Computer Vision</span>
-        <span class="badge ai">Deep Learning</span>
-        <span class="badge tech">YOLO</span>
-        <span class="badge tech">OpenCV</span>
-        <span class="badge">Neural Network</span>
-        <span class="badge">Pose Estimation</span>
-        <span class="badge">SLAM</span>
-        <span class="badge">Generative AI</span>
+      <div class="hero-photo">
+        <img src="assets/images/school-classroom.jpg" alt="전주여자고등학교 마스터 클래스">
+      </div>
+      <div class="hero-body">
+        <div class="eyebrow">Jeonju Girls' High School</div>
+        <h1>전주여자고등학교 마스터 클래스</h1>
+        <p class="subtitle">Computer Vision · Deep Learning · Robotics<br>9개 실습으로 익히는 AI·로봇 실전 커리큘럼</p>
+        <div class="badges">
+          <span class="badge ai">Computer Vision</span>
+          <span class="badge ai">Deep Learning</span>
+          <span class="badge tech">YOLO</span>
+          <span class="badge tech">OpenCV</span>
+          <span class="badge">Neural Network</span>
+          <span class="badge">Pose Estimation</span>
+          <span class="badge">SLAM</span>
+          <span class="badge">Generative AI</span>
+        </div>
       </div>
     </header>
 
