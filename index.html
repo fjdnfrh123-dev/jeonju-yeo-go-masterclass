@@ -3,299 +3,301 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a1628">
+  <meta name="theme-color" content="#0f2847">
   <title>전주여자고등학교 마스터 클래스</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #070d18;
-      --surface: rgba(14, 24, 44, 0.92);
-      --card: rgba(16, 30, 56, 0.88);
-      --card-demo: rgba(20, 28, 52, 0.82);
-      --line: rgba(56, 189, 248, 0.18);
-      --line-demo: rgba(167, 139, 250, 0.22);
-      --text: #e8f4ff;
-      --muted: #8ba3bc;
-      --cyan: #22d3ee;
-      --blue: #38bdf8;
-      --purple: #a78bfa;
-      --green: #34d399;
-      --amber: #fbbf24;
+      --road: #1a3348;
+      --night: #0c1926;
+      --panel: rgba(22, 42, 62, 0.94);
+      --panel-soft: rgba(28, 52, 74, 0.88);
+      --line: rgba(94, 196, 255, 0.22);
+      --line-demo: rgba(251, 191, 36, 0.28);
+      --text: #edf6ff;
+      --muted: #94b4cc;
+      --nav: #5ec4ff;
+      --route: #fbbf24;
+      --go: #4ade80;
+      --demo: #fb923c;
     }
     * { box-sizing: border-box; margin: 0; }
     body {
-      font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Noto Sans KR", sans-serif;
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
       min-height: 100vh;
+      background: var(--night);
     }
     body::before {
       content: "";
       position: fixed; inset: 0; z-index: -2;
       background:
-        radial-gradient(ellipse 70% 50% at 15% 0%, rgba(34, 211, 238, 0.14), transparent),
-        radial-gradient(ellipse 55% 45% at 90% 10%, rgba(167, 139, 250, 0.12), transparent),
-        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(56, 189, 248, 0.08), transparent),
-        linear-gradient(180deg, #070d18 0%, #0c1528 50%, #0a1220 100%);
+        linear-gradient(180deg, rgba(12,25,38,.55) 0%, rgba(12,25,38,.92) 100%),
+        url("assets/images/auto-road.jpg") center/cover no-repeat fixed;
     }
     body::after {
       content: "";
-      position: fixed; inset: 0; z-index: -1; opacity: .35;
-      background-image:
-        linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 80px,
+        rgba(251, 191, 36, 0.025) 80px,
+        rgba(251, 191, 36, 0.025) 82px
+      );
     }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 48px 20px 72px; }
-    .hero {
-      text-align: center; margin-bottom: 40px; overflow: hidden;
-      background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
-      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.06), 0 20px 50px rgba(0, 0, 0, 0.45);
+    .wrap { max-width: 960px; margin: 0 auto; padding: 40px 18px 64px; }
+
+    .top {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      margin-bottom: 36px;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
     }
-    .hero-photo { position: relative; height: 210px; overflow: hidden; }
-    .hero-photo img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      filter: brightness(0.72) saturate(1.1);
+    .top img {
+      width: 100%; height: 240px; object-fit: cover; display: block;
+      filter: brightness(.55) saturate(1.05);
     }
-    .hero-photo::before {
-      content: "";
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(180deg, rgba(7,13,24,.1) 0%, rgba(7,13,24,.85) 100%);
+    .top-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(12,25,38,.92) 0%, rgba(12,25,38,.55) 55%, rgba(12,25,38,.78) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 28px 28px 32px;
     }
-    .hero-photo .bbox {
-      position: absolute; z-index: 2; border: 2px solid var(--cyan);
-      box-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
-      font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 600;
-      color: var(--cyan); padding: 2px 6px; background: rgba(7, 13, 24, 0.55);
+    .route-tag {
+      display: inline-flex; align-self: flex-start; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--route); margin-bottom: 14px;
     }
-    .bbox-1 { left: 18%; top: 28%; width: 28%; height: 38%; }
-    .bbox-1::before { content: "person 0.91"; position: absolute; top: -20px; left: -2px; }
-    .bbox-2 { left: 52%; top: 42%; width: 34%; height: 32%; border-color: var(--purple); box-shadow: 0 0 12px rgba(167,139,250,.4); color: var(--purple); }
-    .bbox-2::before { content: "bus 0.87"; position: absolute; top: -20px; left: -2px; }
-    .hero-body { padding: 24px 24px 32px; position: relative; z-index: 1; }
-    .eyebrow {
-      display: inline-block; font-family: "JetBrains Mono", monospace;
-      font-size: 11px; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;
+    .route-tag::before {
+      content: ""; width: 28px; height: 3px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--route), transparent);
     }
-    h1 {
-      font-size: clamp(1.6rem, 4vw, 2.35rem); font-weight: 800; letter-spacing: -.02em;
-      color: #f0f9ff; line-height: 1.25; margin-bottom: 10px;
+    .top h1 {
+      font-size: clamp(1.55rem, 4.5vw, 2.5rem);
+      font-weight: 800; letter-spacing: -.03em; line-height: 1.15;
+      margin-bottom: 8px;
     }
-    .subtitle { color: var(--muted); font-size: .96rem; max-width: 520px; margin: 0 auto 20px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .badge {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 6px;
-      border: 1px solid var(--line); background: rgba(34, 211, 238, 0.06); color: var(--muted);
+    .top p { color: var(--muted); font-size: .95rem; max-width: 520px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag {
+      font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--nav); background: rgba(94,196,255,.08);
     }
-    .badge.ai { color: var(--cyan); border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.1); }
-    .badge.tech { color: var(--purple); border-color: rgba(167,139,250,.35); background: rgba(167,139,250,.1); }
-    section { margin-bottom: 36px; }
-    h2 {
-      font-family: "JetBrains Mono", monospace;
-      font-size: .85rem; font-weight: 600; margin-bottom: 14px; color: var(--cyan);
-      letter-spacing: .08em; text-transform: uppercase;
-      padding-bottom: 8px; border-bottom: 1px solid var(--line);
+    .tag.amber { color: var(--route); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.08); }
+    .tag.green { color: var(--go); border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.08); }
+
+    section { margin-bottom: 32px; }
+    .sec-head {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+      font-size: .88rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--nav);
     }
-    .grid { display: grid; gap: 12px; }
-    .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-      padding: 18px 20px; display: grid; grid-template-columns: auto 1fr auto; gap: 14px;
-      align-items: start;
-      box-shadow: inset 0 1px 0 rgba(34, 211, 238, 0.06);
+    .sec-head.demo { color: var(--route); }
+    .sec-head::after {
+      content: ""; flex: 1; height: 1px;
+      background: linear-gradient(90deg, currentColor, transparent);
+      opacity: .35;
     }
-    .card.demo-card {
+
+    .list { display: grid; gap: 10px; }
+    .item {
+      display: grid; grid-template-columns: 52px 1fr auto; gap: 14px; align-items: start;
+      padding: 16px 18px; border-radius: 14px;
+      background: var(--panel); border: 1px solid var(--line);
+    }
+    .item.demo {
+      background: var(--panel-soft);
       border-style: dashed; border-color: var(--line-demo);
-      background: var(--card-demo);
-      box-shadow: inset 0 1px 0 rgba(167, 139, 250, 0.06);
     }
-    .num {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px; font-weight: 600; color: var(--cyan);
-      background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34,211,238,.25);
-      padding: 6px 10px; border-radius: 6px;
+    .idx {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800;
+      background: rgba(94,196,255,.12); color: var(--nav);
+      border: 1px solid rgba(94,196,255,.25);
     }
-    .card.demo-card .num {
-      color: var(--purple);
-      background: rgba(167, 139, 250, 0.1); border-color: rgba(167,139,250,.25);
+    .item.demo .idx {
+      background: rgba(251,191,36,.1); color: var(--route);
+      border-color: rgba(251,191,36,.28);
     }
-    .card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 4px; color: #f0f9ff; }
-    .card p { font-size: 14px; color: var(--muted); }
-    .card .remark {
-      font-size: 13px; color: #b8c9db; font-style: italic; margin-top: 6px;
-      padding-left: 10px; border-left: 2px solid rgba(167, 139, 250, 0.45);
+    .item h3 { font-size: .98rem; font-weight: 700; margin-bottom: 4px; }
+    .item p { font-size: 13px; color: var(--muted); }
+    .item .note {
+      margin-top: 6px; font-size: 12px; color: #c8dae8; font-style: italic;
+      padding-left: 10px; border-left: 2px solid rgba(251,191,36,.4);
     }
-    .status {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px; font-weight: 600; letter-spacing: .04em;
-      padding: 4px 9px; border-radius: 6px; white-space: nowrap;
+    .pill {
+      font-size: 10px; font-weight: 700; letter-spacing: .05em;
+      padding: 4px 9px; border-radius: 6px; white-space: nowrap; margin-top: 4px;
     }
-    .status.participate {
-      background: rgba(52, 211, 153, 0.12); color: var(--green);
-      border: 1px solid rgba(52, 211, 153, 0.3);
+    .pill.join { background: rgba(74,222,128,.12); color: var(--go); border: 1px solid rgba(74,222,128,.28); }
+    .pill.show { background: rgba(251,146,60,.12); color: var(--demo); border: 1px solid rgba(251,146,60,.28); }
+
+    .files { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .files a {
+      font-size: 11px; text-decoration: none; padding: 3px 8px; border-radius: 5px;
+      color: var(--nav); background: rgba(94,196,255,.1); border: 1px solid rgba(94,196,255,.2);
     }
-    .status.demo {
-      background: rgba(167, 139, 250, 0.12); color: var(--purple);
-      border: 1px solid rgba(167, 139, 250, 0.3);
+    .files a:hover { background: rgba(94,196,255,.18); }
+    .link {
+      display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 600;
+      color: var(--route); text-decoration: none;
     }
-    .colab {
-      display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600;
-      color: var(--blue); text-decoration: none;
+    .link:hover { text-decoration: underline; }
+
+    .strip {
+      margin-top: 8px; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--line); height: 120px;
     }
-    .colab:hover { color: var(--cyan); }
-    .assets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-    .assets a {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px; color: var(--cyan); text-decoration: none;
-      background: rgba(34, 211, 238, 0.08); border: 1px solid rgba(34,211,238,.2);
-      padding: 3px 8px; border-radius: 4px;
+    .strip img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.7); }
+
+    footer {
+      text-align: center; margin-top: 36px; font-size: 12px; color: var(--muted);
     }
-    .assets a:hover { background: rgba(34, 211, 238, 0.16); }
-    footer { text-align: center; margin-top: 40px; font-size: 13px; color: var(--muted); }
-    footer a { color: var(--blue); }
-    @media (max-width: 720px) {
-      .card { grid-template-columns: 1fr; }
-      .hero-photo { height: 170px; }
+    footer a { color: var(--nav); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .item { grid-template-columns: 1fr; }
+      .idx { width: 42px; height: 42px; font-size: 13px; }
+      .top img { height: 200px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="hero">
-      <div class="hero-photo">
-        <img src="assets/images/bus.jpg" alt="Object Detection">
-        <div class="bbox bbox-1"></div>
-        <div class="bbox bbox-2"></div>
-      </div>
-      <div class="hero-body">
-        <div class="eyebrow">Computer Vision Masterclass</div>
-        <h1>전주여자고등학교 마스터 클래스</h1>
-        <p class="subtitle">Computer Vision · Deep Learning · Robotics<br>9개 실습으로 익히는 AI·로봇 실전 커리큘럼</p>
-        <div class="badges">
-          <span class="badge ai">Computer Vision</span>
-          <span class="badge ai">Deep Learning</span>
-          <span class="badge tech">YOLO</span>
-          <span class="badge tech">OpenCV</span>
-          <span class="badge">Neural Network</span>
-          <span class="badge">Pose Estimation</span>
-          <span class="badge">SLAM</span>
-          <span class="badge">Generative AI</span>
+    <header class="top">
+      <img src="assets/images/auto-vehicle.jpg" alt="">
+      <div class="top-overlay">
+        <div class="route-tag">Autonomous · Mapping · Robotics</div>
+        <h1>전주여자고등학교<br>마스터 클래스</h1>
+        <p>자율주행 · SLAM · 로봇 주행 — AI·로봇 실전 커리큘럼 9개 실습</p>
+        <div class="tags">
+          <span class="tag">SLAM</span>
+          <span class="tag amber">Autonomous Drive</span>
+          <span class="tag green">Mapping</span>
+          <span class="tag">Navigation</span>
+          <span class="tag amber">LiDAR</span>
+          <span class="tag">Path Planning</span>
+          <span class="tag green">Quadruped</span>
+          <span class="tag">Computer Vision</span>
         </div>
       </div>
     </header>
 
     <section>
-      <h2>// 참여형 실습</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="num">01</div>
+      <div class="sec-head">참여형 실습</div>
+      <div class="list">
+        <article class="item">
+          <div class="idx">01</div>
           <div>
             <h3>객체 인식</h3>
             <p>YOLO 기반 객체 검출 · 이미지 &amp; 영상 inference</p>
-            <div class="assets">
+            <div class="files">
               <a href="assets/images/bus.jpg">bus.jpg</a>
               <a href="assets/videos/NIRO.mp4">NIRO.mp4</a>
             </div>
-            <a class="colab" href="https://colab.research.google.com/drive/14oVqYHSUHidtCF5bH8OxbQsESjNZ5mNV?hl=ko#scrollTo=qYpXtka5nezB">▶ Colab 노트북</a>
+            <a class="link" href="https://colab.research.google.com/drive/14oVqYHSUHidtCF5bH8OxbQsESjNZ5mNV?hl=ko#scrollTo=qYpXtka5nezB">▶ Colab 노트북</a>
           </div>
-          <span class="status participate">참여형</span>
+          <span class="pill join">참여형</span>
         </article>
 
-        <article class="card">
-          <div class="num">02</div>
+        <article class="item">
+          <div class="idx">02</div>
           <div>
             <h3>특징점 추적 · 영상 움직임 분석</h3>
             <p>Optical Flow · VIRAT Dataset · 학생 결과물</p>
-            <div class="assets">
+            <div class="files">
               <a href="assets/videos/실습_예시.mp4">실습_예시</a>
               <a href="assets/videos/실습결과.mp4">실습결과</a>
               <a href="assets/videos/VIRAT_Dataset_Sample.mp4">VIRAT</a>
               <a href="assets/videos/학생_실습_결과.mp4">학생 결과</a>
             </div>
-            <a class="colab" href="https://colab.research.google.com/drive/1LU01gmea1DX2alSdUuqvjB6L0iJUdBqg?hl=ko#scrollTo=0a95549f">▶ Colab 노트북</a>
+            <a class="link" href="https://colab.research.google.com/drive/1LU01gmea1DX2alSdUuqvjB6L0iJUdBqg?hl=ko#scrollTo=0a95549f">▶ Colab 노트북</a>
           </div>
-          <span class="status participate">참여형</span>
+          <span class="pill join">참여형</span>
         </article>
 
-        <article class="card">
-          <div class="num">03</div>
+        <article class="item">
+          <div class="idx">03</div>
           <div>
             <h3>YOLO + 특징점 추적</h3>
             <p>Detection + Tracking 통합 파이프라인</p>
-            <div class="assets">
+            <div class="files">
               <a href="assets/videos/학생_실습_예시.mp4">학생_실습_예시</a>
             </div>
-            <a class="colab" href="https://colab.research.google.com/drive/1lYJz_rAKCN72N13hmtpiR_zdWgjqr6BI?hl=ko#scrollTo=1884ead8">▶ Colab 노트북</a>
+            <a class="link" href="https://colab.research.google.com/drive/1lYJz_rAKCN72N13hmtpiR_zdWgjqr6BI?hl=ko#scrollTo=1884ead8">▶ Colab 노트북</a>
           </div>
-          <span class="status participate">참여형</span>
+          <span class="pill join">참여형</span>
         </article>
       </div>
     </section>
 
     <section>
-      <h2>// 시연형 실습</h2>
-      <div class="grid">
-        <article class="card demo-card">
-          <div class="num">04</div>
+      <div class="sec-head demo">시연형 실습</div>
+      <div class="list">
+        <article class="item demo">
+          <div class="idx">04</div>
           <div>
             <h3>웹캡 검출 · 분할 · 추적 · 포즈</h3>
-            <p class="remark">실시간 webcam pipeline — Detection / Segmentation / Tracking / Pose Estimation</p>
+            <p class="note">실시간 perception pipeline — Detect / Segment / Track / Pose</p>
           </div>
-          <span class="status demo">시연형</span>
+          <span class="pill show">시연형</span>
         </article>
-
-        <article class="card demo-card">
-          <div class="num">05</div>
+        <article class="item demo">
+          <div class="idx">05</div>
           <div>
             <h3>생성형 AI &amp; 바이브코딩</h3>
-            <p class="remark">Youtube → MP4 · 축구 영상 · 모션 캡처 · AI-assisted coding</p>
+            <p class="note">Youtube → MP4 · 축구 영상 · 모션 캡처 · AI-assisted coding</p>
           </div>
-          <span class="status demo">시연형</span>
+          <span class="pill show">시연형</span>
         </article>
-
-        <article class="card demo-card">
-          <div class="num">06</div>
+        <article class="item demo">
+          <div class="idx">06</div>
           <div>
             <h3>연구실 플랫폼 소개</h3>
-            <p class="remark">Lab platform walkthrough · 연구 인프라 &amp; 도구 생태계</p>
+            <p class="note">Lab platform · 연구 인프라 &amp; 도구 생태계</p>
           </div>
-          <span class="status demo">시연형</span>
+          <span class="pill show">시연형</span>
         </article>
-
-        <article class="card demo-card">
-          <div class="num">07</div>
+        <article class="item demo">
+          <div class="idx">07</div>
           <div>
             <h3>매니퓰레이터 · 모방학습 시뮬</h3>
-            <p class="remark">Imitation Learning · Manipulator Simulation</p>
+            <p class="note">Imitation Learning · Manipulator Simulation</p>
           </div>
-          <span class="status demo">시연형</span>
+          <span class="pill show">시연형</span>
         </article>
-
-        <article class="card demo-card">
-          <div class="num">08</div>
+        <article class="item demo">
+          <div class="idx">08</div>
           <div>
             <h3>매핑 + 자율주행</h3>
-            <p class="remark">SLAM · Environment Mapping · Autonomous Navigation</p>
+            <p class="note">SLAM · Environment Mapping · Autonomous Navigation</p>
           </div>
-          <span class="status demo">시연형</span>
+          <span class="pill show">시연형</span>
         </article>
-
-        <article class="card demo-card">
-          <div class="num">09</div>
+        <article class="item demo">
+          <div class="idx">09</div>
           <div>
             <h3>로봇개 매핑 / 주행</h3>
-            <p class="remark">Quadruped Robot · Mapping · Locomotion</p>
+            <p class="note">Quadruped Robot · Mapping · Locomotion</p>
           </div>
-          <span class="status demo">시연형</span>
+          <span class="pill show">시연형</span>
         </article>
+      </div>
+      <div class="strip">
+        <img src="assets/images/auto-road.jpg" alt="">
       </div>
     </section>
 
     <footer>
-      전주여자고등학교 마스터 클래스 · <a href="https://github.com/fjdnfrh123-dev/jeonju-yeo-go-masterclass">fjdnfrh123-dev/jeonju-yeo-go-masterclass</a>
+      전주여자고등학교 마스터 클래스 ·
+      <a href="https://github.com/fjdnfrh123-dev/jeonju-yeo-go-masterclass">GitHub</a>
     </footer>
   </div>
 </body>
