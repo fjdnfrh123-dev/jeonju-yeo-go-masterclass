@@ -1,40 +1,96 @@
-# 전주여고 마스터 클래스 — 실습 상세
+# 실습 상세
 
-## 실습 1. 객체 인식
+[← README로 돌아가기](../README.md)
 
-🔗 [Colab 노트북](https://colab.research.google.com/drive/14oVqYHSUHidtCF5bH8OxbQsESjNZ5mNV?hl=ko#scrollTo=qYpXtka5nezB)
+---
 
-- [bus.jpg](../assets/images/bus.jpg)
-- [NIRO.mp4](../assets/videos/NIRO.mp4)
+## 01 · 객체 인식 `Ready`
 
-## 실습 2. 특징점 추적을 통한 영상 움직임 분석
+| | |
+|---|---|
+| **Colab** | [노트북 열기](https://colab.research.google.com/drive/14oVqYHSUHidtCF5bH8OxbQsESjNZ5mNV?hl=ko#scrollTo=qYpXtka5nezB) |
+| **자료** | [bus.jpg](../assets/images/bus.jpg) · [NIRO.mp4](../assets/videos/NIRO.mp4) |
+| **키워드** | Object Detection · YOLO · Image Inference |
 
-🔗 [Colab 노트북](https://colab.research.google.com/drive/1LU01gmea1DX2alSdUuqvjB6L0iJUdBqg?hl=ko#scrollTo=0a95549f)
+---
 
-- [실습_예시.mp4](../assets/videos/실습_예시.mp4)
-- [실습결과.mp4](../assets/videos/실습결과.mp4)
-- [VIRAT_Dataset_Sample.mp4](../assets/videos/VIRAT_Dataset_Sample.mp4)
-- [학생_실습_결과.mp4](../assets/videos/학생_실습_결과.mp4)
+## 02 · 특징점 추적 · 영상 움직임 분석 `Ready`
 
-## 실습 3. YOLO + 특징점 추적을 통한 영상 움직임 분석
+| | |
+|---|---|
+| **Colab** | [노트북 열기](https://colab.research.google.com/drive/1LU01gmea1DX2alSdUuqvjB6L0iJUdBqg?hl=ko#scrollTo=0a95549f) |
+| **자료** | [실습_예시](../assets/videos/실습_예시.mp4) · [실습결과](../assets/videos/실습결과.mp4) · [VIRAT Sample](../assets/videos/VIRAT_Dataset_Sample.mp4) · [학생 결과](../assets/videos/학생_실습_결과.mp4) |
+| **키워드** | Optical Flow · Feature Tracking · Motion Analysis |
 
-🔗 [Colab 노트북](https://colab.research.google.com/drive/1lYJz_rAKCN72N13hmtpiR_zdWgjqr6BI?hl=ko#scrollTo=1884ead8)
+---
 
-- [학생_실습_예시.mp4](../assets/videos/학생_실습_예시.mp4)
+## 03 · YOLO + 특징점 추적 `Ready`
 
-## 실습 4. 웹캡을 이용한 검출, 분할, 추적, 포즈
+| | |
+|---|---|
+| **Colab** | [노트북 열기](https://colab.research.google.com/drive/1lYJz_rAKCN72N13hmtpiR_zdWgjqr6BI?hl=ko#scrollTo=1884ead8) |
+| **자료** | [학생_실습_예시](../assets/videos/학생_실습_예시.mp4) |
+| **키워드** | YOLO · Multi-object Tracking · Pipeline |
 
-(자료 준비 중)
+---
 
-## 실습 5. 생성형 AI & 바이브코딩
+## 04 · 웹캡 검출 · 분할 · 추적 · 포즈 `Note`
 
-- Youtube → mp4 변환 → 축구 영상
-- 모션 캡쳐
+> **비고 · 미리보기**
+>
+> 웹캠 실시간 파이프라인 — Detection → Segmentation → Tracking → Pose Estimation
 
-## 실습 6. 연구실 플랫폼 소개
+| 항목 | 내용 |
+|------|------|
+| Detection | 실시간 객체 검출 |
+| Segmentation | 픽셀 단위 분할 |
+| Tracking | 프레임 간 객체 추적 |
+| Pose | 인체/관절 포즈 추정 |
 
-## 실습 7. 매니퓰레이터 — 모방학습 시뮬
+*Colab · 데모 영상 — 추후 업데이트*
 
-## 실습 8. 매핑 + 자율주행
+---
 
-## 실습 9. 로봇개 매핑 / 주행
+## 05 · 생성형 AI & 바이브코딩 `Note`
+
+> **비고 · 미리보기**
+>
+> AI 도구로 영상·코드 워크플로우를 빠르게 만드는 실습
+
+| 항목 | 내용 |
+|------|------|
+| Video | Youtube → MP4 변환 → 축구 영상 |
+| Motion | 모션 캡처 파이프라인 |
+| Coding | 바이브코딩 (AI-assisted development) |
+
+---
+
+## 06 · 연구실 플랫폼 소개 `Note`
+
+> **비고 · 미리보기**
+>
+> 연구실 인프라 · 실험 플랫폼 · 도구 생태계 소개
+
+---
+
+## 07 · 매니퓰레이터 · 모방학습 시뮬 `Note`
+
+> **비고 · 미리보기**
+>
+> Manipulator simulation · Imitation Learning · Policy demo
+
+---
+
+## 08 · 매핑 + 자율주행 `Note`
+
+> **비고 · 미리보기**
+>
+> SLAM · Environment Mapping · Autonomous Navigation
+
+---
+
+## 09 · 로봇개 매핑 / 주행 `Note`
+
+> **비고 · 미리보기**
+>
+> Quadruped Robot · Mapping · Locomotion · Autonomous Walk
