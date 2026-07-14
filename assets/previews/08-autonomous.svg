@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" rx="16" fill="#121829"/>
+  <path d="M80 260 Q160 180 240 220 T400 180 T560 240" stroke="#334155" stroke-width="2" fill="none"/>
+  <path d="M80 260 Q160 200 240 230 T400 200 T560 250" stroke="#38bdf8" stroke-width="2" fill="none" opacity=".5"/>
+  <rect x="300" y="200" width="50" height="30" rx="6" fill="#34d399" transform="rotate(-15 325 215)"/>
+  <circle cx="325" cy="215" r="4" fill="#fff"/>
+  <circle cx="180" cy="210" r="6" fill="#a78bfa"/><circle cx="420" cy="190" r="6" fill="#a78bfa"/>
+  <text x="320" y="330" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="14">SLAM · Mapping · Autonomous Drive</text>
+</svg>

@@ -15,7 +15,7 @@
 
 객체 인식부터 로봇 자율주행까지 — **9개 실습**으로 익히는 AI·로봇 실전 커리큘럼
 
-[📖 실습 상세 보기](docs/exercises.md) · [🌐 웹 페이지 열기](https://fjdnfrh123-dev.github.io/jeonju-yeo-go-masterclass/)
+[📖 실습 상세](docs/exercises.md) · [🌐 웹 페이지](https://fjdnfrh123-dev.github.io/jeonju-yeo-go-masterclass/)
 
 </div>
 
@@ -25,64 +25,105 @@
 
 | # | 실습 | 상태 | Colab | 비고 |
 |:-:|------|:----:|:-----:|------|
-| **01** | 객체 인식 | `Ready` | [▶ 노트북](https://colab.research.google.com/drive/14oVqYHSUHidtCF5bH8OxbQsESjNZ5mNV?hl=ko#scrollTo=qYpXtka5nezB) | YOLO 기반 객체 검출 · `bus.jpg` · `NIRO.mp4` |
-| **02** | 특징점 추적 · 영상 움직임 분석 | `Ready` | [▶ 노트북](https://colab.research.google.com/drive/1LU01gmea1DX2alSdUuqvjB6L0iJUdBqg?hl=ko#scrollTo=0a95549f) | Optical Flow · VIRAT Dataset · 학생 결과물 포함 |
-| **03** | YOLO + 특징점 추적 | `Ready` | [▶ 노트북](https://colab.research.google.com/drive/1lYJz_rAKCN72N13hmtpiR_zdWgjqr6BI?hl=ko#scrollTo=1884ead8) | Detection + Tracking 결합 · 학생 실습 예시 영상 |
-| **04** | 웹캡 검출 · 분할 · 추적 · 포즈 | `Note` | — | *실시간 webcam pipeline · Detection / Segmentation / Tracking / Pose* |
-| **05** | 생성형 AI & 바이브코딩 | `Note` | — | *Youtube → MP4 변환 · 축구 영상 · 모션 캡처 · AI-assisted coding* |
-| **06** | 연구실 플랫폼 소개 | `Note` | — | *Lab platform walkthrough · 연구 인프라·도구 소개* |
-| **07** | 매니퓰레이터 · 모방학습 시뮬 | `Note` | — | *Imitation learning · manipulator simulation* |
-| **08** | 매핑 + 자율주행 | `Note` | — | *SLAM · mapping · autonomous navigation* |
-| **09** | 로봇개 매핑 / 주행 | `Note` | — | *Quadruped robot · mapping & locomotion* |
-
-> **`Ready`** — Colab + 자료 준비 완료 &nbsp;·&nbsp; **`Note`** — 커리큘럼 미리보기 (비고란)
+| **01** | 객체 인식 | `Ready` | [▶](https://colab.research.google.com/drive/14oVqYHSUHidtCF5bH8OxbQsESjNZ5mNV?hl=ko#scrollTo=qYpXtka5nezB) | YOLO · bus.jpg · NIRO.mp4 |
+| **02** | 특징점 추적 · 영상 움직임 분석 | `Ready` | [▶](https://colab.research.google.com/drive/1LU01gmea1DX2alSdUuqvjB6L0iJUdBqg?hl=ko#scrollTo=0a95549f) | Optical Flow · VIRAT · 학생 결과 |
+| **03** | YOLO + 특징점 추적 | `Ready` | [▶](https://colab.research.google.com/drive/1lYJz_rAKCN72N13hmtpiR_zdWgjqr6BI?hl=ko#scrollTo=1884ead8) | Detection + Tracking |
+| **04** | 웹캡 검출 · 분할 · 추적 · 포즈 | `Note` | — | *webcam pipeline · Detect / Segment / Track / Pose* |
+| **05** | 생성형 AI & 바이브코딩 | `Note` | — | *Youtube→MP4 · 축구 · 모션캡처 · Vibe coding* |
+| **06** | 연구실 플랫폼 소개 | `Note` | — | *Lab platform · 연구 인프라* |
+| **07** | 매니퓰레이터 · 모방학습 시뮬 | `Note` | — | *Imitation learning · simulation* |
+| **08** | 매핑 + 자율주행 | `Note` | — | *SLAM · autonomous navigation* |
+| **09** | 로봇개 매핑 / 주행 | `Note` | — | *Quadruped · mapping · locomotion* |
 
 ---
 
-## Highlights
+## Preview
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="33%" align="center">
 
-### 01 · Object Detection
+**01 · Detection**
 
-<img src="assets/images/bus.jpg" alt="bus.jpg sample" width="100%" style="border-radius:12px">
+<img src="assets/thumbnails/01-detection-bus.jpg" width="100%" alt="bus detection">
 
-[`bus.jpg`](assets/images/bus.jpg) · [`NIRO.mp4`](assets/videos/NIRO.mp4)
+[`bus.jpg`](assets/images/bus.jpg)
 
 </td>
-<td width="50%" valign="top">
+<td width="33%" align="center">
 
-### 02 · Feature Tracking
+**01 · NIRO**
 
-영상 속 움직임을 특징점으로 추적하고 분석합니다.
+<img src="assets/thumbnails/NIRO.jpg" width="100%" alt="NIRO">
 
-- [`실습_예시.mp4`](assets/videos/실습_예시.mp4)
-- [`실습결과.mp4`](assets/videos/실습결과.mp4)
-- [`VIRAT_Dataset_Sample.mp4`](assets/videos/VIRAT_Dataset_Sample.mp4)
-- [`학생_실습_결과.mp4`](assets/videos/학생_실습_결과.mp4)
+[`NIRO.mp4`](assets/videos/NIRO.mp4)
+
+</td>
+<td width="33%" align="center">
+
+**02 · Tracking**
+
+<img src="assets/thumbnails/실습_예시.jpg" width="100%" alt="tracking">
+
+[`실습_예시.mp4`](assets/videos/실습_예시.mp4)
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td align="center">
 
-### 03 · YOLO + Tracking
+**02 · Result**
 
-검출과 추적을 하나의 파이프라인으로.
+<img src="assets/thumbnails/실습결과.jpg" width="100%">
 
-- [`학생_실습_예시.mp4`](assets/videos/학생_실습_예시.mp4)
+[`실습결과.mp4`](assets/videos/실습결과.mp4)
 
 </td>
-<td width="50%" valign="top">
+<td align="center">
 
-### 04–09 · Beyond Vision
+**02 · VIRAT**
 
-> *웹캡을 이용한 검출, 분할, 추적, 포즈*  
-> *생성형 AI · 바이브코딩 · 로봇 시뮬 · 자율주행*
+<img src="assets/thumbnails/VIRAT_Dataset_Sample.jpg" width="100%">
 
-마스터 클래스 후반부 주제 — **비고란 미리보기**로 안내됩니다.
+[`VIRAT.mp4`](assets/videos/VIRAT_Dataset_Sample.mp4)
+
+</td>
+<td align="center">
+
+**03 · YOLO+Track**
+
+<img src="assets/thumbnails/학생_실습_예시.jpg" width="100%">
+
+[`학생_실습_예시.mp4`](assets/videos/학생_실습_예시.mp4)
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**04 · Note**
+
+<img src="assets/previews/04-webcam.svg" width="100%">
+
+*Webcam · Pose*
+
+</td>
+<td align="center">
+
+**05 · Note**
+
+<img src="assets/previews/05-genai.svg" width="100%">
+
+*Gen-AI · Vibe Coding*
+
+</td>
+<td align="center">
+
+**08 · Note**
+
+<img src="assets/previews/08-autonomous.svg" width="100%">
+
+*Autonomous Drive*
 
 </td>
 </tr>
@@ -90,36 +131,31 @@
 
 ---
 
-## Tracks
+## Media Gallery
 
-```
-  Vision          AI / Gen-AI       Robotics
-  ──────          ───────────       ────────
-  · Detection     · Vibe coding     · Manipulator
-  · Tracking      · Motion capture  · Mapping
-  · YOLO          · Video pipeline  · Autonomous drive
-  · Webcam CV                       · Quadruped
-```
+<details open>
+<summary><b>▶ 영상 미리보기 (클릭해서 재생)</b></summary>
 
----
+<br>
 
-## Structure
+**NIRO.mp4**
 
-```
-jeonju-yeo-go-masterclass/
-├── README.md
-├── docs/
-│   ├── index.html        # GitHub Pages 랜딩
-│   └── exercises.md
-└── assets/
-    ├── images/
-    └── videos/
-```
+<video src="assets/videos/NIRO.mp4" controls width="100%"></video>
+
+**실습_예시.mp4**
+
+<video src="assets/videos/실습_예시.mp4" controls width="100%"></video>
+
+**학생_실습_예시.mp4**
+
+<video src="assets/videos/학생_실습_예시.mp4" controls width="100%"></video>
+
+</details>
 
 ---
 
 <div align="center">
 
-<sub>전주여고 마스터 클래스 · Notion export 기반 정리</sub>
+<sub>전주여고 마스터 클래스 · <a href="https://fjdnfrh123-dev.github.io/jeonju-yeo-go-masterclass/">웹에서 보기</a></sub>
 
 </div>
