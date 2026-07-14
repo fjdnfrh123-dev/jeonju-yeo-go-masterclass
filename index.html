@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#1e3a5f">
+  <meta name="theme-color" content="#0a1628">
   <title>전주여자고등학교 마스터 클래스</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --surface: rgba(236, 228, 210, 0.96);
-      --card: rgba(242, 235, 220, 0.97);
-      --card-demo: rgba(248, 240, 228, 0.95);
-      --line: rgba(30, 58, 95, .18);
-      --text: #1a2e44;
-      --muted: #4a5f73;
-      --navy: #1e3a5f;
-      --blue: #1d4ed8;
-      --green: #047857;
-      --amber: #b45309;
+      --bg: #070d18;
+      --surface: rgba(14, 24, 44, 0.92);
+      --card: rgba(16, 30, 56, 0.88);
+      --card-demo: rgba(20, 28, 52, 0.82);
+      --line: rgba(56, 189, 248, 0.18);
+      --line-demo: rgba(167, 139, 250, 0.22);
+      --text: #e8f4ff;
+      --muted: #8ba3bc;
+      --cyan: #22d3ee;
+      --blue: #38bdf8;
+      --purple: #a78bfa;
+      --green: #34d399;
+      --amber: #fbbf24;
     }
     * { box-sizing: border-box; margin: 0; }
     body {
@@ -32,92 +35,130 @@
       content: "";
       position: fixed; inset: 0; z-index: -2;
       background:
-        linear-gradient(155deg, rgba(26, 46, 68, 0.88) 0%, rgba(30, 61, 92, 0.82) 45%, rgba(42, 74, 66, 0.86) 100%),
-        url("assets/images/school-campus.jpg") center/cover no-repeat fixed;
+        radial-gradient(ellipse 70% 50% at 15% 0%, rgba(34, 211, 238, 0.14), transparent),
+        radial-gradient(ellipse 55% 45% at 90% 10%, rgba(167, 139, 250, 0.12), transparent),
+        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(56, 189, 248, 0.08), transparent),
+        linear-gradient(180deg, #070d18 0%, #0c1528 50%, #0a1220 100%);
     }
     body::after {
       content: "";
-      position: fixed; inset: 0; z-index: -1; opacity: .18;
+      position: fixed; inset: 0; z-index: -1; opacity: .35;
       background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(255,255,255,.05) 32px),
-        repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(255,255,255,.03) 32px);
+        linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
     .wrap { max-width: 920px; margin: 0 auto; padding: 48px 20px 72px; }
     .hero {
       text-align: center; margin-bottom: 40px; overflow: hidden;
-      background: var(--surface); border: 2px solid rgba(30, 58, 95, .22); border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .28);
+      background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.06), 0 20px 50px rgba(0, 0, 0, 0.45);
     }
-    .hero-photo { position: relative; height: 200px; overflow: hidden; }
+    .hero-photo { position: relative; height: 210px; overflow: hidden; }
     .hero-photo img {
       width: 100%; height: 100%; object-fit: cover; display: block;
-      filter: saturate(1.05) contrast(1.02);
+      filter: brightness(0.72) saturate(1.1);
     }
-    .hero-photo::after {
+    .hero-photo::before {
       content: "";
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(236, 228, 210, 0.95) 100%);
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(7,13,24,.1) 0%, rgba(7,13,24,.85) 100%);
     }
-    .hero-body { padding: 8px 24px 32px; margin-top: -28px; position: relative; z-index: 1; }
+    .hero-photo .bbox {
+      position: absolute; z-index: 2; border: 2px solid var(--cyan);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
+      font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 600;
+      color: var(--cyan); padding: 2px 6px; background: rgba(7, 13, 24, 0.55);
+    }
+    .bbox-1 { left: 18%; top: 28%; width: 28%; height: 38%; }
+    .bbox-1::before { content: "person 0.91"; position: absolute; top: -20px; left: -2px; }
+    .bbox-2 { left: 52%; top: 42%; width: 34%; height: 32%; border-color: var(--purple); box-shadow: 0 0 12px rgba(167,139,250,.4); color: var(--purple); }
+    .bbox-2::before { content: "bus 0.87"; position: absolute; top: -20px; left: -2px; }
+    .hero-body { padding: 24px 24px 32px; position: relative; z-index: 1; }
     .eyebrow {
-      display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em;
-      color: var(--blue); margin-bottom: 12px;
+      display: inline-block; font-family: "JetBrains Mono", monospace;
+      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;
     }
     h1 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -.02em;
-      color: var(--navy); line-height: 1.25; margin-bottom: 10px;
+      font-size: clamp(1.6rem, 4vw, 2.35rem); font-weight: 800; letter-spacing: -.02em;
+      color: #f0f9ff; line-height: 1.25; margin-bottom: 10px;
     }
-    .subtitle { color: var(--muted); font-size: .98rem; max-width: 520px; margin: 0 auto 20px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+    .subtitle { color: var(--muted); font-size: .96rem; max-width: 520px; margin: 0 auto 20px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .badge {
-      font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px;
-      border: 1px solid var(--line); background: #f8fafc; color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 6px;
+      border: 1px solid var(--line); background: rgba(34, 211, 238, 0.06); color: var(--muted);
     }
-    .badge.ai { color: #1e40af; border-color: rgba(29,78,216,.28); background: rgba(219,234,254,.85); }
-    .badge.tech { color: #065f46; border-color: rgba(4,120,87,.28); background: rgba(209,250,229,.85); }
+    .badge.ai { color: var(--cyan); border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.1); }
+    .badge.tech { color: var(--purple); border-color: rgba(167,139,250,.35); background: rgba(167,139,250,.1); }
     section { margin-bottom: 36px; }
     h2 {
-      font-size: 1rem; font-weight: 700; margin-bottom: 14px; color: #ece4d2;
-      padding-bottom: 8px; border-bottom: 2px solid rgba(236, 228, 210, .25);
+      font-family: "JetBrains Mono", monospace;
+      font-size: .85rem; font-weight: 600; margin-bottom: 14px; color: var(--cyan);
+      letter-spacing: .08em; text-transform: uppercase;
+      padding-bottom: 8px; border-bottom: 1px solid var(--line);
     }
     .grid { display: grid; gap: 12px; }
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: 14px;
       padding: 18px 20px; display: grid; grid-template-columns: auto 1fr auto; gap: 14px;
-      align-items: start; box-shadow: 0 2px 12px rgba(30, 58, 95, .04);
+      align-items: start;
+      box-shadow: inset 0 1px 0 rgba(34, 211, 238, 0.06);
     }
-    .card.demo-card { border-style: dashed; border-color: rgba(180,83,9,.32); background: var(--card-demo); }
+    .card.demo-card {
+      border-style: dashed; border-color: var(--line-demo);
+      background: var(--card-demo);
+      box-shadow: inset 0 1px 0 rgba(167, 139, 250, 0.06);
+    }
     .num {
-      font-size: 13px; font-weight: 700; color: var(--blue);
-      background: #eff6ff; padding: 6px 10px; border-radius: 8px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px; font-weight: 600; color: var(--cyan);
+      background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34,211,238,.25);
+      padding: 6px 10px; border-radius: 6px;
     }
-    .card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 4px; color: var(--navy); }
+    .card.demo-card .num {
+      color: var(--purple);
+      background: rgba(167, 139, 250, 0.1); border-color: rgba(167,139,250,.25);
+    }
+    .card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 4px; color: #f0f9ff; }
     .card p { font-size: 14px; color: var(--muted); }
     .card .remark {
-      font-size: 13px; color: #475569; font-style: italic; margin-top: 6px;
-      padding-left: 10px; border-left: 2px solid rgba(217,119,6,.35);
+      font-size: 13px; color: #b8c9db; font-style: italic; margin-top: 6px;
+      padding-left: 10px; border-left: 2px solid rgba(167, 139, 250, 0.45);
     }
     .status {
-      font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 6px; white-space: nowrap;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px; font-weight: 600; letter-spacing: .04em;
+      padding: 4px 9px; border-radius: 6px; white-space: nowrap;
     }
-    .status.participate { background: #ecfdf5; color: var(--green); }
-    .status.demo { background: #fffbeb; color: var(--amber); }
+    .status.participate {
+      background: rgba(52, 211, 153, 0.12); color: var(--green);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .status.demo {
+      background: rgba(167, 139, 250, 0.12); color: var(--purple);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+    }
     .colab {
       display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600;
       color: var(--blue); text-decoration: none;
     }
-    .colab:hover { text-decoration: underline; }
+    .colab:hover { color: var(--cyan); }
     .assets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .assets a {
-      font-size: 12px; color: var(--blue); text-decoration: none;
-      background: #eff6ff; padding: 3px 8px; border-radius: 6px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px; color: var(--cyan); text-decoration: none;
+      background: rgba(34, 211, 238, 0.08); border: 1px solid rgba(34,211,238,.2);
+      padding: 3px 8px; border-radius: 4px;
     }
-    .assets a:hover { background: #dbeafe; }
-    footer { text-align: center; margin-top: 40px; font-size: 13px; color: rgba(236, 228, 210, .75); }
-    footer a { color: #93c5fd; }
+    .assets a:hover { background: rgba(34, 211, 238, 0.16); }
+    footer { text-align: center; margin-top: 40px; font-size: 13px; color: var(--muted); }
+    footer a { color: var(--blue); }
     @media (max-width: 720px) {
       .card { grid-template-columns: 1fr; }
-      .hero-photo { height: 160px; }
+      .hero-photo { height: 170px; }
     }
   </style>
 </head>
@@ -125,10 +166,12 @@
   <div class="wrap">
     <header class="hero">
       <div class="hero-photo">
-        <img src="assets/images/school-classroom.jpg" alt="전주여자고등학교 마스터 클래스">
+        <img src="assets/images/bus.jpg" alt="Object Detection">
+        <div class="bbox bbox-1"></div>
+        <div class="bbox bbox-2"></div>
       </div>
       <div class="hero-body">
-        <div class="eyebrow">Jeonju Girls' High School</div>
+        <div class="eyebrow">Computer Vision Masterclass</div>
         <h1>전주여자고등학교 마스터 클래스</h1>
         <p class="subtitle">Computer Vision · Deep Learning · Robotics<br>9개 실습으로 익히는 AI·로봇 실전 커리큘럼</p>
         <div class="badges">
@@ -145,7 +188,7 @@
     </header>
 
     <section>
-      <h2>참여형 실습</h2>
+      <h2>// 참여형 실습</h2>
       <div class="grid">
         <article class="card">
           <div class="num">01</div>
@@ -193,7 +236,7 @@
     </section>
 
     <section>
-      <h2>시연형 실습</h2>
+      <h2>// 시연형 실습</h2>
       <div class="grid">
         <article class="card demo-card">
           <div class="num">04</div>
